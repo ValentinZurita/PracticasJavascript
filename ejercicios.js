@@ -140,8 +140,80 @@ numeroAlReves()
 
 //Ejercicios clase 37 2 de Julio del 2021
 // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+const numeroPrimo = (numero) => {
+
+    if(numero === undefined) console.warn("No ingresaste un numero")
+
+    if(typeof numero !== "number") return console.error("No ingresaste un numero")
+
+    if(numero === 1) return console.error("El numero no puede ser 1")
+
+    if(Math.sign(numero) === -1) return console.error("El numero no puede ser negativo")
+
+    let divisible = false;
+
+    for(let i = 2; i < numero; i++){
+        if(numero%i === 0){
+            divisible = true
+            break
+        }
+    }
+
+    return (divisible)
+        ?console.log(`El numero ${numero}, No es primo`)
+        :console.log(`El numero ${numero}, Si es primo`)
+}
+
+numeroPrimo(1)
+numeroPrimo(200)
+numeroPrimo(33)
 
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
-// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F
+const numeroParOImpar = (numero = undefined) => {
 
+    if(numero === undefined) console.warn("No ingresaste un numero")
+
+    if(typeof numero !== "number") return console.error("No ingresaste un numero")
+
+    return(numero % 2 === 0)
+        ?console.log("El numero es par")
+        :console.log("El numero es impar")
+}
+
+numeroParOImpar(3)
+numeroParOImpar(2)
+
+
+// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F
+const convertiGrados = (grados = undefined, unidad = undefined) => {
+
+    if(grados === undefined) console.warn("No ingresaste los grados")
+    
+    if(typeof grados !== "number") return console.error("No ingresaste un numero")
+    
+    if(unidad === undefined) console.warn("No ingresaste la unidad")
+    
+    if(typeof unidad !== "string") return console.error("La unidad debe ser del tipo textdddddo")
+
+    if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("Valor de unidad no reconocido")
+
+    if(unidad === "C"){
+        return console.info(`${grados}C = ${Math.round((grados * (9/5) + 32 ))}F`)
+    }else if (unidad === "F"){
+        return console.info("Tengo sueño son la 00:55 am")
+
+    }
+    
+}
+
+convertiGrados()
+convertiGrados("2")
+convertiGrados(2)
+convertiGrados(2, '$')
+convertiGrados(35, "C")
+
+//Ejercicios clase 39 3 de Julio del 2021
+// 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+// 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
