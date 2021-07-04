@@ -272,8 +272,80 @@ aplicarDescuente(232435345345, 30434)
 
 //Clase 40 3 de Julio del 2021
 // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+const consonanteOVocal = (palabra = "") => {
 
+    //Validaciones
+    if(palabra === "") return console.warn(`No ingresaste una palabra`)
+    if(typeof palabra !== "string") return console.warn(`El valor ${palabra} no es una cadena de texto`)
+
+    //Variables con las expresiones regulares
+    let vocales = /[aeiou]/ig;
+    let consonantes = /[^aeiou ]/ig;
+
+    //Operaciones para determinar el numero de vocales y consonantes en la palabra
+    let numeroDeVocales = palabra.match(vocales).length
+    let numeroDeConsonantes = palabra.match(consonantes).length
+
+    //Resultado
+    return console.info(`El numero de vocales en la ${palabra} es de: ${numeroDeVocales} y el numero de consonantes es de: ${numeroDeConsonantes}`)
+    
+}
+
+consonanteOVocal()
+consonanteOVocal(32)
+consonanteOVocal(true)
+consonanteOVocal("Hola mundo")
 
 
 // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+const validarNombre  = (nombre = "") => {
+
+    //Validaciones
+    if(nombre === "") return console.warn(`No ingresaste un nombre`)
+    if(typeof nombre !== "string") return console.error(`El nombre debe ser una cadena de texto`)
+    if(nombre.length < 3) return console.error(`Ingresa un nombre valido`)
+
+    //Expresion regular para el abecedario
+    let noAbecedario = /[^a-zÑñáÁéÉíÍóÓúÚ ]/ig
+    let caracteresInvalidos = noAbecedario.test(nombre)
+
+    return (caracteresInvalidos)
+        ?console.info(`"${nombre}" no es un nombre valido`)
+        :console.info(`El nombre "${nombre}" es valido`)
+}
+validarNombre()
+validarNombre(4)
+validarNombre(true)
+validarNombre("kd")
+validarNombre("Alejandro")
+validarNombre("Alejadro Maquina Sensual 89")
+validarNombre("Ñero")
+
+
 // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+const validarEmail = (email = "") => {
+
+    //Validaciones
+    if(email === "") return console.warn(`No ingresaste un email`)
+    if(typeof email !== "string") return console.error(`El email debe ser una cadena de texto`)
+    if(email.length < 3) return console.error(`Ingresa un email valido`)
+
+    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email)
+
+    return (expReg)
+        ?console.info(`"${email}" es un email valido`)
+        :console.info(`El email "${email}" no es valido`)
+
+}
+
+validarEmail()
+validarEmail("va.szp.com")
+validarEmail("perro@gmail.com")
+
+//Clase 41 3 de Julio del 2021
+// 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+
+
+// 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+// 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
