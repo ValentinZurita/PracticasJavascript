@@ -215,5 +215,65 @@ convertiGrados(35, "C")
 
 //Ejercicios clase 39 3 de Julio del 2021
 // 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+const convertirNumeroABinario = (numero = undefined, base = undefined) => {
+    //Validaciones
+    if(numero === undefined) return console.warn("No ingresaste un numero a convertir")
+    if(base === undefined) return console.warn("No ingresaste la base")
+    if(typeof numero !== "number") return console.error(`El valor ${numero} no es un numero`)
+    if(typeof base !== "number") return console.error(`El valor ${base} no es un numero`)
+    //Conversiones
+    if(base === 2){
+        return console.info(`El numero ${numero} base ${base} es igual a: ${parseInt(numero, base)} base 10`)
+    }
+    if(base === 10){
+        return console.info(`El numero ${numero} base ${base} es igual a: ${numero.toString(2)} binario `)
+    }
+    else{
+        return console.error("La base no es valida")
+    }
+}
+
+convertirNumeroABinario()
+convertirNumeroABinario(100, 2)
+convertirNumeroABinario(3030324, 10)
+
+
 // 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+const aplicarDescuente = (cantidad = undefined, desceunto = 0) => {
+    
+    //Validaciones
+    if(cantidad === undefined) return console.warn("No ingresaste la cantidad")
+    if(cantidad === 0) return console.error("El monto no puede ser 0")
+    if(typeof cantidad !== "number") return console.error(`El valor ${cantidad} no es valido`)
+    if(typeof desceunto !== "number") return console.error(`El valor ${desceunto} no es valido`)
+    if(Math.sign(desceunto) === -1) return console.error("El descuento no puede ser negativo")
+    if(Math.sign(cantidad) === -1) return console.error("El monto no puede ser negativo")
+    if(desceunto > 100) return console.error("El descuento no puede ser mayor a 100")
+
+    //Operaciones
+    let precioConDescunto = cantidad * ((100 - desceunto)/100)
+    
+    if(precioConDescunto !== undefined || precioConDescunto === NaN){
+        console.info(`La precio ${cantidad} despues del descunto de ${desceunto} es de ${precioConDescunto}`)
+    }else{
+        console.error("Ha ocurrido un error")
+    }
+
+}
+
+aplicarDescuente()
+aplicarDescuente("dfdf", 0)
+aplicarDescuente(100, 20)
+aplicarDescuente(232435345345, 30434)
+
+
 // 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+
+//Clase 40 3 de Julio del 2021
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
