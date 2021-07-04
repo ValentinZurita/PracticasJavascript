@@ -387,3 +387,56 @@ const numerosParesImpares = (arreglo = undefined) =>{
 numerosParesImpares([1,2,3,4,5,6,7,8,9])
 
 //Clase 42 4 de Julio del 2021
+//Arreglos menores y mayores
+const menorYMayorEnArreglo = (arreglo = undefined) => {
+    if(arreglo === undefined) return console.warn(`No se ingreso un arreglo`)
+    if(!(arreglo instanceof Array)) return console.error(`El valor que ingresaste no es un arreglo`)
+    if(arreglo.length === 0) return console.error(`El arreglo esta vacio`)
+    for(let num of arreglo){
+        if(typeof num !== "number") return console.error(`En valor ${num} no es un numero`)
+    }
+    return console.info({
+        arreglo,
+        ascendente : arreglo.map(el => el).sort(),
+        descendente : arreglo.map(el => el).sort().reverse()
+    })
+}
+
+menorYMayorEnArreglo()
+menorYMayorEnArreglo([1,6,4,2,7,89])
+
+//Funcion que elimina los numeros duplicados en un arreglo
+const eliminarDuplicadosArreglo = (arreglo = undefined) => {
+    if(arreglo === undefined) return console.warn(`No se ingreso un arreglo`)
+    if(!(arreglo instanceof Array)) return console.error(`El valor que ingresaste no es un arreglo`)
+    if(arreglo.length === 0) return console.error(`El arreglo esta vacio`)
+    
+    return console.info({
+        original : arreglo,
+        sinDuplicados : arreglo.filter((value, index, self) => self.indexOf(value) === index),
+        sinDuplicados2 : [...new Set(arreglo)]
+    })
+
+}
+
+eliminarDuplicadosArreglo()
+eliminarDuplicadosArreglo([1,1,1,2,3,4,4,4,5,6])
+
+//Funcion que obtenga un promedio dado un arreglo de numeros
+const obtenerPromedio = (arreglo = undefined) => {
+    if(arreglo === undefined) return console.warn(`No se ingreso un arreglo`)
+    if(!(arreglo instanceof Array)) return console.error(`El valor que ingresaste no es un arreglo`)
+    if(arreglo.length === 0) return console.error(`El arreglo esta vacio`)
+    for(let num of arreglo){
+        if(typeof num !== "number") return console.error(`En valor ${num} no es un numero`)
+    }
+    
+    let suma = arreglo.reduce((a, b) => a + b)
+    let largo = arreglo.length
+    let promedio = suma / largo
+
+    console.info(`El promedio del arreglo es ${promedio}`)
+}
+
+obtenerPromedio([9,9,9,8,8,10,10])
+
