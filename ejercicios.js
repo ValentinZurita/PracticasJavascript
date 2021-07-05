@@ -440,3 +440,60 @@ const obtenerPromedio = (arreglo = undefined) => {
 
 obtenerPromedio([9,9,9,8,8,10,10])
 
+//Clase 43 4 de Julio del 2021
+// 27) Programa una clase llamada Pelicula.
+
+// La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+//   - Todos los datos del objeto son obligatorios.
+//   - Valida que el id IMDB tenga 9 caracteres 
+//   - Valida que el título no rebase los 100 caracteres.
+//   - Valida que el director no rebase los 50 caracteres.
+//   - Valida que el año de estreno sea un número entero de 4 dígitos.
+//   - Valida que el país o paises sea introducidos en forma de arreglo.
+//   - Valida que los géneros sean introducidos en forma de arreglo.
+//   - Valida que los géneros introducidos esten dentro de los géneros 
+//      aceptados*.
+//   - Crea un método estático que devuelva los géneros aceptados*.
+//   - Valida que la calificación sea un número entre 0 y 10 pudiendo ser 
+//     decimal de una posición.
+//   - Crea un método que devuelva toda la ficha técnica de la película.
+//   - Apartir de un arreglo con la información de 3 películas genera 3 
+//     instancias de la clase de forma automatizada e imprime la ficha técnica 
+//     de cada película.
+
+// * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+class Pelicula {
+    constructor(id, titulo, director, estreno, pais, genero, clasificacion){
+        this.id = this.validarID(id)
+        this.titulo = 
+        director,
+        estreno,
+        pais,
+        genero,
+        clasificacion
+    }
+
+    validarID(id){
+
+        if(this.id === undefined) return console.warn(`El id no fue especificado`)
+        if(typeof this.id !== "string") console.error(`El id debe ser una cadena de texto`)
+        if(this.id === "") return console.warn(`El id no puede estar vacio`)
+        if(this.id.length < 9) return console.warn(`El Id debe tener al menos 9 caracteres`)
+
+        return id
+    }
+
+    validarTitulo(titulo){
+
+        if(this.id === undefined) return console.warn(`El titulo no fue especificado`)
+        if(typeof this.id !== "string") console.error(`El titulo debe ser una cadena de texto`)
+        if(this.id === "") return console.warn(`El titulo no puede estar vacio`)
+        if(this.id.length > 100) return console.warn(`El titulo de la pelicula es demasiado largo`)
+
+        return titulo
+
+    }
+
+    
+
+}
