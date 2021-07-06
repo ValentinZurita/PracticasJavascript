@@ -132,3 +132,34 @@ miSet2.forEach(item => console.log(`${item}`))
 
 let arregloDelSet = Array.from(miSet2)
 console.log(`${arregloDelSet}`)
+
+//Clase 51: Mapas - Lunes 5 de Julio del 2021
+let mapa = new Map()
+mapa.set("nombre","Valentin Alejandro")
+mapa.set("apellido", "Perez Zurita")
+mapa.set("sexo", "no binario")
+
+console.log(mapa)
+console.log(mapa.has("correo"))
+console.log(mapa.has("nombre"))
+console.log(mapa.get("nombre"))
+
+mapa.delete("apellido")
+console.log(mapa)
+
+for (const [key, value] of mapa) {
+    console.log(`Llave ${key}, Valor ${value}`)    
+}
+
+const map2 = new Map(
+    ["Nombre", "Kenai"],
+    ["Edad", 3],
+    ["Raza", "Negro"]
+)
+
+const llavesMapa = [...map2.keys()]
+const valoresMapa = [...map2.values()]
+
+console.log(llavesMapa)
+console.log(valoresMapa)
+
