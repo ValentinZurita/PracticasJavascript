@@ -114,3 +114,21 @@ for(let propiedad in persona){
 }
 
 //Clase 50: Sets - Lunes 5 de Julio del 2021
+let miSet = new Set([1,1,2,{},{},true, true, false])
+
+console.log(`Recorriendo set`)
+for (const item of miSet) {
+    console.log(item)
+}
+
+console.log(`Recorriendo Set 2`)
+let miSet2 = new Set()
+miSet2.add(1)
+miSet2.add("Hola")
+miSet2.add(true)
+miSet2.add({})
+
+miSet2.forEach(item => console.log(`${item}`))
+
+let arregloDelSet = Array.from(miSet2)
+console.log(`${arregloDelSet}`)
