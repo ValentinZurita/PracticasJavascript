@@ -9,8 +9,39 @@
     <title>Manejo del HTML</title>
     <style>
         :root{
-            --pink-color: rgb(249, 252, 87);
+            --yellow-color: rgb(249, 252, 87);
             --dark-color: #222;
+        }
+
+        .cards{
+            border: thin solid var(--dark-color);
+            padding: 1rem;
+        }
+
+        .card{
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: var(--yellow-color);
+        }
+
+        .card figcaption{
+            padding: 1rem;
+        }
+
+        .rotate-45{
+            transform: rotate(45deg);
+        }
+
+        .rotate-135{
+            transform: rotate(135deg);
+        }
+
+        .opacity-80{
+            opacity: .8;
+        }
+
+        .sepia{
+            filter: sepia();
         }
     </style>
 
@@ -47,7 +78,7 @@
         DOM
     </a>
 
-    <section>
+    <section class="cards">
         <figure class="card">
             <img src="https://placeimg.com/200/200/tech" alt="Tech">
             <figcaption>Tech</figcaption>
