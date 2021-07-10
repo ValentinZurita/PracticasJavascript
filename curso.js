@@ -86,6 +86,7 @@ async function fucnonAsincrona(){
 
 fucnonAsincrona()
 
+
 //Clase 49: Nuevos tipos de datos - Lunes 5 de Julio del 2021
 const id = Symbol("id")
 const id2 = Symbol("id")
@@ -113,6 +114,7 @@ for(let propiedad in persona){
     console.log(persona[propiedad])
 }
 
+
 //Clase 50: Sets - Lunes 5 de Julio del 2021
 let miSet = new Set([1,1,2,{},{},true, true, false])
 
@@ -132,6 +134,7 @@ miSet2.forEach(item => console.log(`${item}`))
 
 let arregloDelSet = Array.from(miSet2)
 console.log(`${arregloDelSet}`)
+
 
 //Clase 51: Mapas - Lunes 5 de Julio del 2021
 let mapa = new Map()
@@ -163,3 +166,95 @@ const valoresMapa = [...map2.values()]
 console.log(llavesMapa)
 console.log(valoresMapa)
 
+
+//Clase 52:  Weakset - Martes 6 de Julio del 2021
+const ws = new WeakSet()
+
+let valor1 = {"valor" : 1}
+let valor2 = {"valor" : 2}
+let valor3 = {"valor" : 3}
+
+ws.add(valor1)
+ws.add(valor2)
+ws.add(valor3)
+console.log(ws)
+
+setTimeout(() => {
+    valor1 = null;
+    valor2 = null;
+    valor3 = null;
+}, 5000)
+
+const wm = new WeakMap()
+
+let llave1 = {}
+let llave2 = {}
+let llave3 = {}
+
+wm.set(llave1, 1)
+wm.set(llave2, 2)
+
+
+//Clase 53: Iteradores - Martes 6 de Julio
+const iterable = [1,2,3,4,5,]
+const iterador = iterable[Symbol.iterator]()
+
+console.log(iterable)
+console.log(iterador)
+
+console.log(iterador.next())
+
+let next = iterador.next()
+while(!next.done){
+    console.log(next.value)
+    next = iterador.next()
+}
+
+//Clase 54 Generadores - Martes 6 de Julio
+function* iterable(){
+    yield "hola"
+    console.log(`Hola consola`)
+    yield "hola 2"
+    console.log(`Seguimos con mas instrucciones`)
+    yield "hola3"
+}
+
+let iteradordeGenerador = iterable();
+console.log(iteradordeGenerador.next())
+console.log(iteradordeGenerador.next())
+console.log(iteradordeGenerador.next())
+
+for(let y of iteradordeGenerador){
+    console.log(y)
+}
+
+const arr = [...iterable()]
+console.log(arr)
+
+//Clase 55: Propiedades dinamicas - Miercoles 7 de Junio
+const objUsuarios = {
+
+}
+const usuarios = ["Alejandro", "Canela", "Cinthia"]
+
+usuarios.forEach((usuario, index) => objUsuarios[`id ${index}`] = usuario)
+
+console.log(objUsuarios)
+
+
+//Clase 56: This - Miercoles 8 de Junio
+console.log(this === window)
+
+this.nombre = "Contexto Globla"
+console.log(this.nombre)
+
+function imprimir(){
+    console.log(this.nombre)
+}
+
+imprimir()
+
+const objContext = {
+    nombre : "Contexto Objeto",
+    imprimir : imprimir
+}
