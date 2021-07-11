@@ -226,60 +226,61 @@ posiciones:
 // console.log($cards.children[1])
 
 
-//Clase 72: Manejadores de Eventos - 10 de Julio del 2021
-function holaMundo(){
-    alert("Hola mundo")
-    console.log(event)
-}
+// //Clase 72: Manejadores de Eventos - 10 de Julio del 2021
+// function holaMundo(){
+//     alert("Hola mundo")
+//     console.log(event)
+// }
 
-function saludar(nombre = "Desconocido"){
-    alert(`Hola ${nombre}`)
+// function saludar(nombre = "Desconocido"){
+//     alert(`Hola ${nombre}`)
 
-}
+// }
 
-const $eventoSemantico = document.getElementById("evento-semantico")
-$eventoSemantico.onclick = holaMundo
-//O como arrow
-$eventoSemantico.onclick = (event) =>{
-    alert("Nuevo Alert")
-    console.log(event)
-}
+// const $eventoSemantico = document.getElementById("evento-semantico")
+// $eventoSemantico.onclick = holaMundo
+// //O como arrow
+// $eventoSemantico.onclick = (event) =>{
+//     alert("Nuevo Alert")
+//     console.log(event)
+// }
 
-const $eventoMultiple = document.getElementById("evento-semantico")
-$eventoMultiple.addEventListener("click", holaMundo)
+// const $eventoMultiple = document.getElementById("evento-semantico")
+// $eventoMultiple.addEventListener("click", holaMundo)
 
-$eventoMultiple.addEventListener("click", () => saludar("Alex"))
+// $eventoMultiple.addEventListener("click", () => saludar("Alex"))
 
-const $eventoRemover = document.getElementById("removedor")
+// const $eventoRemover = document.getElementById("removedor")
 
-const removerDobleClick = (e) => {
-    alert(`Removiendo el evento de tipo ${e.type}`)
-    console.log(e)
-    $eventoRemover.removeEventListener("dblclick", removerDobleClick)
-    //$eventoRemover.disabled = true
-}
+// const removerDobleClick = (e) => {
+//     alert(`Removiendo el evento de tipo ${e.type}`)
+//     console.log(e)
+//     $eventoRemover.removeEventListener("dblclick", removerDobleClick)
+//     //$eventoRemover.disabled = true
+// }
 
-$eventoRemover.addEventListener("dblclick", removerDobleClick)
+// $eventoRemover.addEventListener("dblclick", removerDobleClick)
 
 
-//Clase 74: DOM Flujo de Evento - 10 de Julio del 2021
-const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+// //Clase 74: DOM Flujo de Evento - 10 de Julio del 2021
+// const $divsEventos = document.querySelectorAll(".eventos-flujo div")
 
-function flujoEventos(event){
-    console.log(`Hola te saluda ${this.className}, el evento lo origino ${event.target.className}`)
-}
+// function flujoEventos(event){
+//     console.log(`Hola te saluda ${this.className}, el evento lo origino ${event.target.className}`)
+//     //event.stopPropagation() //Detiene la propagacion
+// }
 
-console.log($divsEventos)
+// console.log($divsEventos)
 
-$divsEventos.forEach( (div) => {
-    //Fase de burbuja
-    //div.addEventListener("clcik", flujoEventos)
-    //div.addEventListener("clcik", flujoEventos, false)
-    //Fase de captura
-    //div.addEventListener("click", flujoEventos, true)
-    div.addEventListener("click", flujoEventos, {
-        capture : false,
-        once : true
-    })
-});
+// $divsEventos.forEach( (div) => {
+//     //Fase de burbuja
+//     //div.addEventListener("clcik", flujoEventos)
+//     //div.addEventListener("clcik", flujoEventos, false)
+//     //Fase de captura
+//     //div.addEventListener("click", flujoEventos, true)
+//     div.addEventListener("click", flujoEventos, {
+//         capture : false,
+//         once : true
+//     })
+// });
 
