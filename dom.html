@@ -8,57 +8,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manejo del HTML</title>
     <style>
-        :root{
+        :root {
             --yellow-color: rgb(249, 252, 87);
             --dark-color: #222;
         }
 
-        .cards{
+        .cards {
             border: thin solid var(--dark-color);
             padding: 1rem;
         }
 
-        .card{
+        .card {
             display: inline-block;
             background-color: var(--dark-color);
             color: var(--yellow-color);
         }
 
-        .card figcaption{
+        .card figcaption {
             padding: 1rem;
         }
 
-        .rotate-45{
+        .rotate-45 {
             transform: rotate(45deg);
         }
 
-        .rotate-135{
+        .rotate-135 {
             transform: rotate(135deg);
         }
 
-        .opacity-80{
+        .opacity-80 {
             opacity: .8;
         }
 
-        .sepia{
+        .sepia {
             filter: sepia();
         }
 
-        .eventos-flujo div{
+        .eventos-flujo div {
             padding: 4rem;
             font-size: 2rem;
             text-align: center;
         }
 
-        .uno{
+        .uno {
             background-color: yellow;
         }
 
-        .dos{
+        .dos {
             background-color: gold;
         }
 
-        .tres{
+        .tres {
             background-color: lightyellow;
         }
     </style>
@@ -71,7 +71,7 @@
     <h3>Manejo del DOM</h3>
 
     <p id="que-es">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Velit soluta maiores commodi dignissimos modi sapiente rem beatae deleniti rerum
         voluptates accusamus,similique, at autem! Libero harum dolores minima earum quaerat.
     </p>
@@ -88,11 +88,8 @@
 
     <input type="text" name="nombre" placeholder="Nombre">
 
-    <a class="link-dom" 
-    href="dom.html" 
-    data-description="Documento Object Model" 
-    data-id="1" 
-    style="background-color: #F17;">
+    <a class="link-dom" href="dom.html" data-description="Documento Object Model" data-id="1"
+        style="background-color: #F17;">
         DOM
     </a>
 
@@ -150,10 +147,28 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h3 style="width: 2000px;">Manejo del BOM</h3>
+    <button id="abrir-ventana">Abrir Ventana</button>
+    <br><br>
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+    <br><br>
+    <button id="imprimir-ventana">Imprimir Ventana</button>
+    <br><br>
+
     <script src="dom.js"></script>
+    <script src="bom.js"></script>
 
 </body>
+
 </html>
