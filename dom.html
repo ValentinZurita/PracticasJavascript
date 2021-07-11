@@ -43,6 +43,24 @@
         .sepia{
             filter: sepia();
         }
+
+        .eventos-flujo div{
+            padding: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .uno{
+            background-color: yellow;
+        }
+
+        .dos{
+            background-color: gold;
+        }
+
+        .tres{
+            background-color: lightyellow;
+        }
     </style>
 
 </head>
@@ -99,6 +117,40 @@
             <img src="https://placeimg.com/200/200/nature" alt="Nature">
             <figcaption>Nature</figcaption>
         </figure>
+    </section>
+
+    <template id="template-card">
+        <figure class="card">
+            <img src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+    </template>
+
+    <h3>Manejando Eventos</h3>
+    <button onclick="holaMundo()">Evento con atributo HTML</button>
+
+    <br>
+    <button id="evento-semantico">Evento con manejador semantico</button>
+
+    <br><br>
+    <button id="removedor">Remover Eventos</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="eventos-flujo">
+        <div class="uno">
+            Uno
+            <div class="dos">
+                Dos
+                <div class="tres">
+                    Tres
+                </div>
+            </div>
+        </div>
+        
     </section>
 
     <script src="dom.js"></script>
