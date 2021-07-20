@@ -6,6 +6,8 @@ import scrollTopBottom from "./scroll_top_bottom.js";
 import darkTheme from "./tema_oscuro.js";
 import responsiveMedia from "./objeto_responsive.js";
 import responsiveTester from "./prueba_responsive.js";
+import userDeviceInfo from "./deteccion_de_dispositivos.js";
+import networkStatus from "./deteccion_de_red.js";
 
 const doc = document
 
@@ -28,6 +30,8 @@ doc.addEventListener("DOMContentLoaded", e => {
         `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32332.752710337634!2d139.75502439353485!3d35.673417616948726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2zVG9raW8sIEphcMOzbg!5e0!3m2!1ses-419!2smx!4v1626630928142!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
     )
     responsiveTester("responsive-tester")
+    userDeviceInfo("user-agent")
+
 })
 
 doc.addEventListener("keydown", (e) => {
@@ -36,3 +40,4 @@ doc.addEventListener("keydown", (e) => {
 })
 
 darkTheme(".dark-theme-btn", "dark-mode")
+networkStatus()
