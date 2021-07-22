@@ -65,17 +65,17 @@ export function shortcuts(e) {
     console.log(e.type)
     console.log(e)
 
-    if (e.key === "a") {
-        alert("Hey! Que estas haciendo?")
-    }
+    // if (e.key === "a") {
+    //     alert("Hey! Que estas haciendo?")
+    // }
 
-    if (e.key === "p") {
-        prompt("Que hay de nuevo? Cuentame de ti:")
-    }
+    // if (e.key === "p") {
+    //     prompt("Que hay de nuevo? Cuentame de ti:")
+    // }
 
-    if (e.key === "c") {
-        confirm("Puto se aceptas. Te la comes si cancelas")
-    }
+    // if (e.key === "c") {
+    //     confirm("Puto se aceptas. Te la comes si cancelas")
+    // }
 
 }
 

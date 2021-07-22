@@ -22,3 +22,5 @@ export default function networkStatus () {
     window.addEventListener("online", (e) => isOnline());
     window.addEventListener("offline", (e) => isOnline());
 }
+
+

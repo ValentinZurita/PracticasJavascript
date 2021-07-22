@@ -8,6 +8,9 @@ import responsiveMedia from "./objeto_responsive.js";
 import responsiveTester from "./prueba_responsive.js";
 import userDeviceInfo from "./deteccion_de_dispositivos.js";
 import networkStatus from "./deteccion_de_red.js";
+import webCam from "./deteccion_webcam.js";
+import getGeolocation from "./geolocalizacion.js";
+import searchFilter from "./filtro_busqueda.js";
 
 const doc = document
 
@@ -31,7 +34,9 @@ doc.addEventListener("DOMContentLoaded", e => {
     )
     responsiveTester("responsive-tester")
     userDeviceInfo("user-agent")
-
+    webCam("webcam")
+    getGeolocation("geolocation")
+    searchFilter(".card-filter", "card")
 })
 
 doc.addEventListener("keydown", (e) => {
