@@ -11,6 +11,7 @@ import networkStatus from "./deteccion_de_red.js";
 import webCam from "./deteccion_webcam.js";
 import getGeolocation from "./geolocalizacion.js";
 import searchFilter from "./filtro_busqueda.js";
+import draw from "./sorteo.js";
 
 const doc = document
 
@@ -37,6 +38,7 @@ doc.addEventListener("DOMContentLoaded", e => {
     webCam("webcam")
     getGeolocation("geolocation")
     searchFilter(".card-filter", "card")
+    draw("#winner-btn", ".player")
 })
 
 doc.addEventListener("keydown", (e) => {

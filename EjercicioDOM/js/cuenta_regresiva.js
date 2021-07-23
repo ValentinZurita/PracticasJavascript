@@ -15,7 +15,6 @@ export function countdown(countdown, date, message) {
 
         //Mostramos el resultado en el elemento
         const element = document.getElementById(countdown)
-        console.log(element)
         element.innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
 
