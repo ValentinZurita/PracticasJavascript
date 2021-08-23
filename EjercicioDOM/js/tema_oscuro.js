@@ -8,7 +8,7 @@ export default function darkTheme(btn, darkClass) {
     let sun = "☀️"
 
     const darkMode = () => {
-
+      
         $selectors.forEach(el => {
             el.classList.add(darkClass)
         })
